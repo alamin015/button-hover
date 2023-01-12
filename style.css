@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Recursive', sans-serif;
+}
+:root{
+    --bg-color: #1d2223;
+    --blue: #2b31e2;
+    --white: #fff;
+    --hover: rgba(255, 255, 255, 0.5);
+}
+html, body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--bg-color);
+}
+.btn{
+    text-decoration: none;
+    width: 200px;
+    height: 54px;
+    border-radius: 8px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 500;
+}
+.btn_blue{
+    color: var(--white);
+    background: var(--blue);
+}
+.btn div{
+    height: 100%;
+    display: grid;
+    place-items: center;
+    transition: all 0.4s cubic-bezier(0.755,0.05,0.855,0.06);
+    pointer-events: none;
+
+}
+.btn:hover div{
+    transform: translateY(-100%);
+}
+.btn span{
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--white);
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    animation: zoom 1.5s infinite;
+}
+
+@keyframes zoom {
+    0%{
+        width: 0px;
+        height: 0;
+        opacity: 0.5;
+    }
+    100%{
+        width: 1500px;
+        height: 1500px;
+        opacity: 0;
+    }
+}
